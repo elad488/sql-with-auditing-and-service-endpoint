@@ -83,7 +83,10 @@ $deploymentParams = @{
 
 try
 {
+    [System.Collections.Hashtable]$hashResult = @{}
     $deploymentResult = New-AzureRmResourceGroupDeployment @deploymentParams
+    $deploymentResult.Outputs.Keys | ForEach-Object{$hashResult.add($_,$result.Outputs.$_.Value)}
+
 }
 catch
 {
