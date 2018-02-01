@@ -10,8 +10,9 @@
     },
     "secSqlServerPwd": {
       "type": "securestring",
-      "metadata": 
+      "metadata": {
         "description": "Auto-generated password for the SQL database."
+      }
     },
     "deploymentId": {
       "type": "string",
