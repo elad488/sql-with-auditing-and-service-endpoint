@@ -4,6 +4,7 @@
   "parameters": {
     "sqlSrvNamePref": {
       "type": "string",
+      "defaultvalue": "sqlsrv",
       "metadata": {
         "description": "The prefix that would be added to a SQL server name."
       }
@@ -16,6 +17,7 @@
     },
     "deploymentId": {
       "type": "string",
+      "defaultvalue": "123456",
       "metadata": {
         "descriptoin": "ID (GUID) that is used to identify netsted resources and corelate them to a specific deployment."
       }
@@ -23,12 +25,14 @@
     "sqlDbCollation": {
       "type": "string",
       "minLength": 1,
+      "defaultvalue": "SQL_Latin1_General_CP1_CI_AS",
       "metadata": {
         "description": "The collation of an initial SQL database."
       }
     },
     "sqlDbServicePlan": {
       "type": "string",
+      "defaultvalue": "Standard",
       "metadata": {
         "description": "The edition of a database.",
         "comments": "Possible values are: Web, Business, Basic, Standard, Premium, PremiumRS, Free, Stretch, DataWarehouse, System, System2"
@@ -36,33 +40,43 @@
     },
     "sqlDbServiceTier": {
       "type": "string",
+      "defaultvalue": "S0",
       "metadata": {
         "description": "Service tier for the Azure SQL DB. Service tiers are primarily differentiated by a range of performance level and storage size choices, and price."
       }
     },
     "vnetName": {
       "type": "string",
+      "defaultvalue": "DtlDevTestLAB",
       "metadata": {
         "description": "The name of a VNET that will be used for Service Endpoint configuration."
       }
     },
     "subnetName": {
       "type": "string",
+      "defaultvalue": "DtlDevTestLABSubnet",
       "metadata": {
         "description": "The name of a Subnet that will be used for Service Endpoint configuration."
       }
     },
     "storageAccount": {
       "type": "string",
+      "defaultvalue": "tevafs01",
       "metadata": {
         "description": "The name of a Storage Account that will be used for Blob Auditing configuration."
       }
     },
     "storageAccountId": {
-      "type": "string"
+      "type": "string",
+      "defaultvalue": "/subscriptions/0c245757-b6cb-40ba-9c24-d0fef5ef5ca2/resourceGroups/automationlab_rg/providers/Microsoft.Storage/storageAccounts/tevafs01"
     },
     "auditActions": {
       "type": "array",
+      "defaultvalue": [
+        "SUCCESSFUL_DATABASE_AUTHENTICATION_GROUP",
+        "DATABASE_LOGOUT_GROUP",
+        "USER_CHANGE_PASSWORD_GROUP"
+      ],
       "metadata": {
         "description": "List of Actions that will be audited."
       }
